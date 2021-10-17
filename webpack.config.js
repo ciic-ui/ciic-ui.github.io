@@ -14,6 +14,7 @@ async function makeList(dirPath, list) {
 }
 makeList('components/lib', list)
 module.exports = {
+    // lintOnSave: false,
     entry: list,
     mode:'development',
     output: {
