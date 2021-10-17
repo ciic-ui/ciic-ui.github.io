@@ -1,24 +1,18 @@
 # ciic-vue-ui
 
-## Project setup
-```
-npm install
+### 快速开始 
+
+#### 1.安装组件
+
+```bash
+npm i ciic-vue-ui
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#### 2.使用组件
 
-### Compiles and minifies for production
+```javascript
+// 全局使用
+import "ciic-vue-ui/dist/css/index.css";
+import CiicVueUi from 'ciic-vue-ui';
+Vue.use(CiicVueUi);
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
