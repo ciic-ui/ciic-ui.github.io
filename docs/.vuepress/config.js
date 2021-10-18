@@ -1,6 +1,6 @@
 module.exports = {
   title: "ciic-vue-ui",
-  base: '/ciic-ui/',
+  // base: '/ciic-ui/',
   themeConfig: {
     nav: [
       {
