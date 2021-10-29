@@ -2,7 +2,7 @@ import LayoutObserver from './layout-observer';
 import { mapStates } from './store/helper';
 
 export default {
-  name: 'ElTableFooter',
+  name: 'CiicTableFooter',
 
   mixins: [LayoutObserver],
 

@@ -45,18 +45,18 @@
   </div>
 </template>
 <script>
-  import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
+  import CiicCollapseTransition from 'element-ui/src/transitions/collapse-transition';
   import Emitter from 'element-ui/src/mixins/emitter';
   import { generateId } from 'element-ui/src/utils/util';
 
   export default {
-    name: 'ElCollapseItem',
+    name: 'CiicCollapseItem',
 
-    componentName: 'ElCollapseItem',
+    componentName: 'CiicCollapseItem',
 
     mixins: [Emitter],
 
-    components: { ElCollapseTransition },
+    components: { CiicCollapseTransition },
 
     data() {
       return {
@@ -102,12 +102,12 @@
       },
       handleHeaderClick() {
         if (this.disabled) return;
-        this.dispatch('ElCollapse', 'item-click', this);
+        this.dispatch('CiicCollapse', 'item-click', this);
         this.focusing = false;
         this.isClick = true;
       },
       handleEnterClick() {
-        this.dispatch('ElCollapse', 'item-click', this);
+        this.dispatch('CiicCollapse', 'item-click', this);
       }
     }
   };

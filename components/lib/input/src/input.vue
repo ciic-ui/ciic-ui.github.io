@@ -115,9 +115,9 @@
   import {isKorean} from 'element-ui/src/utils/shared';
 
   export default {
-    name: 'ElInput',
+    name: 'CiicInput',
 
-    componentName: 'ElInput',
+    componentName: 'CiicInput',
 
     mixins: [emitter, Migrating],
 
@@ -166,7 +166,7 @@
         type: String,
         validator(val) {
           process.env.NODE_ENV !== 'production' &&
-            console.warn('[Element Warn][Input]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
+            console.warn('[Ciicement Warn][Input]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
           return true;
         }
       },
@@ -263,18 +263,18 @@
       value(val) {
         this.$nextTick(this.resizeTextarea);
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.change', [val]);
+          this.dispatch('CiicFormItem', 'el.form.change', [val]);
         }
       },
       // native input value is set explicitly
       // do not use v-model / :value in template
-      // see: https://github.com/ElemeFE/element/issues/14521
+      // see: https://github.com/CiicemeFE/element/issues/14521
       nativeInputValue() {
         this.setNativeInputValue();
       },
       // when change between <input> and <textarea>,
       // update DOM dependent value and styles
-      // https://github.com/ElemeFE/element/issues/14857
+      // https://github.com/CiicemeFE/element/issues/14857
       type() {
         this.$nextTick(() => {
           this.setNativeInputValue();
@@ -306,7 +306,7 @@
         this.focused = false;
         this.$emit('blur', event);
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.blur', [this.value]);
+          this.dispatch('CiicFormItem', 'el.form.blur', [this.value]);
         }
       },
       select() {
@@ -356,17 +356,17 @@
       },
       handleInput(event) {
         // should not emit input during composition
-        // see: https://github.com/ElemeFE/element/issues/10516
+        // see: https://github.com/CiicemeFE/element/issues/10516
         if (this.isComposing) return;
 
-        // hack for https://github.com/ElemeFE/element/issues/8548
+        // hack for https://github.com/CiicemeFE/element/issues/8548
         // should remove the following line when we don't support IE
         if (event.target.value === this.nativeInputValue) return;
 
         this.$emit('input', event.target.value);
 
         // ensure native input value is controlled
-        // see: https://github.com/ElemeFE/element/issues/12850
+        // see: https://github.com/CiicemeFE/element/issues/12850
         this.$nextTick(this.setNativeInputValue);
       },
       handleChange(event) {

@@ -9,9 +9,9 @@
   import Popper from 'element-ui/src/utils/vue-popper';
 
   export default {
-    name: 'ElDropdownMenu',
+    name: 'CiicDropdownMenu',
 
-    componentName: 'ElDropdownMenu',
+    componentName: 'CiicDropdownMenu',
 
     mixins: [Popper],
 
@@ -44,10 +44,10 @@
     },
 
     mounted() {
-      this.dropdown.popperElm = this.popperElm = this.$el;
-      this.referenceElm = this.dropdown.$el;
+      this.dropdown.popperCiicm = this.popperCiicm = this.$el;
+      this.referenceCiicm = this.dropdown.$el;
       // compatible with 2.6 new v-slot syntax
-      // issue link https://github.com/ElemeFE/element/issues/14345
+      // issue link https://github.com/CiicemeFE/element/issues/14345
       this.dropdown.initDomOperation();
     },
 

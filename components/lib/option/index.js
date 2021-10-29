@@ -1,8 +1,8 @@
-import ElOption from '../select/src/option';
+import CiicOption from '../select/src/option';
 
 /* istanbul ignore next */
-ElOption.install = function(Vue) {
-  Vue.component(ElOption.name, ElOption);
+CiicOption.install = function(Vue) {
+  Vue.component(CiicOption.name, CiicOption);
 };
 
-export default ElOption;
+export default CiicOption;

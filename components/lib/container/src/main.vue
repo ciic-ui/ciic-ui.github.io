@@ -6,9 +6,9 @@
 
 <script>
   export default {
-    name: 'ElContainer',
+    name: 'CiicContainer',
 
-    componentName: 'ElContainer',
+    componentName: 'CiicContainer',
 
     props: {
       direction: String

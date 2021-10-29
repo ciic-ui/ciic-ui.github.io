@@ -117,10 +117,10 @@ import Clickoutside from 'element-ui/src/utils/clickoutside';
 import Emitter from 'element-ui/src/mixins/emitter';
 import Locale from 'element-ui/src/mixins/locale';
 import Migrating from 'element-ui/src/mixins/migrating';
-import ElInput from 'element-ui/packages/input';
-import ElTag from 'element-ui/packages/tag';
-import ElScrollbar from 'element-ui/packages/scrollbar';
-import ElCascaderPanel from 'element-ui/packages/cascader-panel';
+import CiicInput from 'element-ui/packages/input';
+import CiicTag from 'element-ui/packages/tag';
+import CiicScrollbar from 'element-ui/packages/scrollbar';
+import CiicCascaderPanel from 'element-ui/packages/cascader-panel';
 import AriaUtils from 'element-ui/src/utils/aria-utils';
 import { t } from 'element-ui/src/locale';
 import { isEqual, isEmpty, kebabCase } from 'element-ui/src/utils/util';
@@ -173,7 +173,7 @@ const InputSizeMap = {
 };
 
 export default {
-  name: 'ElCascader',
+  name: 'CiicCascader',
 
   directives: { Clickoutside },
 
@@ -189,10 +189,10 @@ export default {
   },
 
   components: {
-    ElInput,
-    ElTag,
-    ElScrollbar,
-    ElCascaderPanel
+    CiicInput,
+    CiicTag,
+    CiicScrollbar,
+    CiicCascaderPanel
   },
 
   props: {
@@ -322,7 +322,7 @@ export default {
 
         this.$emit('input', val);
         this.$emit('change', val);
-        this.dispatch('ElFormItem', 'el.form.change', [val]);
+        this.dispatch('CiicFormItem', 'el.form.change', [val]);
       }
     },
     options: {
@@ -574,11 +574,11 @@ export default {
           target.click();
           break;
         case KeyCode.up:
-          const prev = target.previousElementSibling;
+          const prev = target.previousCiicementSibling;
           prev && prev.focus();
           break;
         case KeyCode.down:
-          const next = target.nextElementSibling;
+          const next = target.nextCiicementSibling;
           next && next.focus();
           break;
         case KeyCode.esc:
@@ -633,10 +633,10 @@ export default {
       if (!inputInner) return;
 
       const tags = $el.querySelector('.el-cascader__tags');
-      let suggestionPanelEl = null;
+      let suggestionPanelCiic = null;
 
-      if (suggestionPanel && (suggestionPanelEl = suggestionPanel.$el)) {
-        const suggestionList = suggestionPanelEl.querySelector('.el-cascader__suggestion-list');
+      if (suggestionPanel && (suggestionPanelCiic = suggestionPanel.$el)) {
+        const suggestionList = suggestionPanelCiic.querySelector('.el-cascader__suggestion-list');
         suggestionList.style.minWidth = inputInner.offsetWidth + 'px';
       }
 

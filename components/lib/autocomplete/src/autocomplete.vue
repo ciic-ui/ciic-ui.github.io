@@ -59,26 +59,26 @@
 </template>
 <script>
   import debounce from 'throttle-debounce/debounce';
-  import ElInput from 'element-ui/packages/input';
+  import CiicInput from 'element-ui/packages/input';
   import Clickoutside from 'element-ui/src/utils/clickoutside';
-  import ElAutocompleteSuggestions from './autocomplete-suggestions.vue';
+  import CiicAutocompleteSuggestions from './autocomplete-suggestions.vue';
   import Emitter from 'element-ui/src/mixins/emitter';
   import Migrating from 'element-ui/src/mixins/migrating';
   import { generateId } from 'element-ui/src/utils/util';
   import Focus from 'element-ui/src/mixins/focus';
 
   export default {
-    name: 'ElAutocomplete',
+    name: 'CiicAutocomplete',
 
     mixins: [Emitter, Focus('input'), Migrating],
 
     inheritAttrs: false,
 
-    componentName: 'ElAutocomplete',
+    componentName: 'CiicAutocomplete',
 
     components: {
-      ElInput,
-      ElAutocompleteSuggestions
+      CiicInput,
+      CiicAutocompleteSuggestions
     },
 
     directives: { Clickoutside },
@@ -156,7 +156,7 @@
       suggestionVisible(val) {
         let $input = this.getInput();
         if ($input) {
-          this.broadcast('ElAutocompleteSuggestions', 'visible', [val, $input.offsetWidth]);
+          this.broadcast('CiicAutocompleteSuggestions', 'visible', [val, $input.offsetWidth]);
         }
       }
     },
@@ -183,7 +183,7 @@
             this.suggestions = suggestions;
             this.highlightedIndex = this.highlightFirstItem ? 0 : -1;
           } else {
-            console.error('[Element Error][Autocomplete]autocomplete suggestions must be an array');
+            console.error('[Ciicement Error][Autocomplete]autocomplete suggestions must be an array');
           }
         });
       },

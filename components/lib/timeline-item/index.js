@@ -1,8 +1,8 @@
-import ElTimelineItem from '../timeline/src/item';
+import CiicTimelineItem from '../timeline/src/item';
 
 /* istanbul ignore next */
-ElTimelineItem.install = function(Vue) {
-  Vue.component(ElTimelineItem.name, ElTimelineItem);
+CiicTimelineItem.install = function(Vue) {
+  Vue.component(CiicTimelineItem.name, CiicTimelineItem);
 };
 
-export default ElTimelineItem;
+export default CiicTimelineItem;

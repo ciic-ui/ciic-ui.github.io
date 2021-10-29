@@ -1,8 +1,8 @@
-import ElInputNumber from './src/input-number';
+import CiicInputNumber from './src/input-number';
 
 /* istanbul ignore next */
-ElInputNumber.install = function(Vue) {
-  Vue.component(ElInputNumber.name, ElInputNumber);
+CiicInputNumber.install = function(Vue) {
+  Vue.component(CiicInputNumber.name, CiicInputNumber);
 };
 
-export default ElInputNumber;
+export default CiicInputNumber;

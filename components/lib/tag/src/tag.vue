@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'ElTag',
+    name: 'CiicTag',
     props: {
       text: String,
       closable: Boolean,
@@ -40,7 +40,7 @@
         effect ? `el-tag--${effect}` : '',
         hit && 'is-hit'
       ];
-      const tagEl = (
+      const tagCiic = (
         <span
           class={ classes }
           style={{ backgroundColor: this.color }}
@@ -52,7 +52,7 @@
         </span>
       );
 
-      return this.disableTransitions ? tagEl : <transition name="el-zoom-in-center">{ tagEl }</transition>;
+      return this.disableTransitions ? tagCiic : <transition name="el-zoom-in-center">{ tagCiic }</transition>;
     }
   };
 </script>

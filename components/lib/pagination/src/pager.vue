@@ -32,7 +32,7 @@
 
 <script type="text/babel">
   export default {
-    name: 'ElPager',
+    name: 'CiicPager',
 
     props: {
       currentPage: Number,

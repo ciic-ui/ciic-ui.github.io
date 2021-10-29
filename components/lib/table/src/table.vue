@@ -213,7 +213,7 @@
 </template>
 
 <script type="text/babel">
-  import ElCheckbox from 'element-ui/packages/checkbox';
+  import CiicCheckbox from 'element-ui/packages/checkbox';
   import { debounce, throttle } from 'throttle-debounce';
   import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
   import Mousewheel from 'element-ui/src/directives/mousewheel';
@@ -229,7 +229,7 @@
   let tableIdSeed = 1;
 
   export default {
-    name: 'ElTable',
+    name: 'CiicTable',
 
     mixins: [Locale, Migrating],
 
@@ -338,7 +338,7 @@
       TableHeader,
       TableFooter,
       TableBody,
-      ElCheckbox
+      CiicCheckbox
     },
 
     methods: {
@@ -468,7 +468,7 @@
 
       doLayout() {
         if (this.shouldUpdateHeight) {
-          this.layout.updateElsHeight();
+          this.layout.updateCiicsHeight();
         }
         this.layout.updateColumnsWidth();
       },

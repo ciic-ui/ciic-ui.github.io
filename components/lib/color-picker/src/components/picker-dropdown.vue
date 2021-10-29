@@ -45,8 +45,8 @@
   import Predefine from './predefine';
   import Popper from 'element-ui/src/utils/vue-popper';
   import Locale from 'element-ui/src/mixins/locale';
-  import ElInput from 'element-ui/packages/input';
-  import ElButton from 'element-ui/packages/button';
+  import CiicInput from 'element-ui/packages/input';
+  import CiicButton from 'element-ui/packages/button';
 
   export default {
     name: 'el-color-picker-dropdown',
@@ -57,8 +57,8 @@
       SvPanel,
       HueSlider,
       AlphaSlider,
-      ElInput,
-      ElButton,
+      CiicInput,
+      CiicButton,
       Predefine
     },
 
@@ -94,8 +94,8 @@
     },
 
     mounted() {
-      this.$parent.popperElm = this.popperElm = this.$el;
-      this.referenceElm = this.$parent.$el;
+      this.$parent.popperCiicm = this.popperCiicm = this.$el;
+      this.referenceCiicm = this.$parent.$el;
     },
 
     watch: {

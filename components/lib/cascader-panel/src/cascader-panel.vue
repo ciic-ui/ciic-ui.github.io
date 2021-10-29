@@ -80,7 +80,7 @@ const checkNode = el => {
 };
 
 export default {
-  name: 'ElCascaderPanel',
+  name: 'CiicCascaderPanel',
 
   components: {
     CascaderMenu
@@ -347,11 +347,11 @@ export default {
 
       const menus = this.$refs.menu || [];
       menus.forEach(menu => {
-        const menuElement = menu.$el;
-        if (menuElement) {
-          const container = menuElement.querySelector('.el-scrollbar__wrap');
-          const activeNode = menuElement.querySelector('.el-cascader-node.is-active') ||
-            menuElement.querySelector('.el-cascader-node.in-active-path');
+        const menuCiicement = menu.$el;
+        if (menuCiicement) {
+          const container = menuCiicement.querySelector('.el-scrollbar__wrap');
+          const activeNode = menuCiicement.querySelector('.el-cascader-node.is-active') ||
+            menuCiicement.querySelector('.el-cascader-node.in-active-path');
           scrollIntoView(container, activeNode);
         }
       });

@@ -33,18 +33,18 @@
 <script>
   import TreeStore from './model/tree-store';
   import { getNodeKey, findNearestComponent } from './model/util';
-  import ElTreeNode from './tree-node.vue';
+  import CiicTreeNode from './tree-node.vue';
   import {t} from 'element-ui/src/locale';
   import emitter from 'element-ui/src/mixins/emitter';
   import { addClass, removeClass } from 'element-ui/src/utils/dom';
 
   export default {
-    name: 'ElTree',
+    name: 'CiicTree',
 
     mixins: [emitter],
 
     components: {
-      ElTreeNode
+      CiicTreeNode
     },
 
     data() {
@@ -271,7 +271,7 @@
       },
 
       handleNodeExpand(nodeData, node, instance) {
-        this.broadcast('ElTreeNode', 'tree-node-expand', node);
+        this.broadcast('CiicTreeNode', 'tree-node-expand', node);
         this.$emit('node-expand', nodeData, node, instance);
       },
 
@@ -359,7 +359,7 @@
       });
 
       this.$on('tree-node-drag-over', (event, treeNode) => {
-        const dropNode = findNearestComponent(event.target, 'ElTreeNode');
+        const dropNode = findNearestComponent(event.target, 'CiicTreeNode');
         const oldDropNode = dragState.dropNode;
         if (oldDropNode && oldDropNode !== dropNode) {
           removeClass(oldDropNode.$el, 'is-drop-inner');

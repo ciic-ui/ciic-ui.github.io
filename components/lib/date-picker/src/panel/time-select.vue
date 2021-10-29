@@ -19,7 +19,7 @@
 </template>
 
 <script type="text/babel">
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import CiicScrollbar from 'element-ui/packages/scrollbar';
   import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
 
   const parseTime = function(time) {
@@ -74,7 +74,7 @@
   };
 
   export default {
-    components: { ElScrollbar },
+    components: { CiicScrollbar },
 
     watch: {
       value(val) {

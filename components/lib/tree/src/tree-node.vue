@@ -72,15 +72,15 @@
 </template>
 
 <script type="text/jsx">
-  import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
-  import ElCheckbox from 'element-ui/packages/checkbox';
+  import CiicCollapseTransition from 'element-ui/src/transitions/collapse-transition';
+  import CiicCheckbox from 'element-ui/packages/checkbox';
   import emitter from 'element-ui/src/mixins/emitter';
   import { getNodeKey } from './model/util';
 
   export default {
-    name: 'ElTreeNode',
+    name: 'CiicTreeNode',
 
-    componentName: 'ElTreeNode',
+    componentName: 'CiicTreeNode',
 
     mixins: [emitter],
 
@@ -103,8 +103,8 @@
     },
 
     components: {
-      ElCollapseTransition,
-      ElCheckbox,
+      CiicCollapseTransition,
+      CiicCheckbox,
       NodeContent: {
         props: {
           node: {
@@ -216,7 +216,7 @@
       },
 
       handleChildNodeExpand(nodeData, node, instance) {
-        this.broadcast('ElTreeNode', 'tree-node-expand', node);
+        this.broadcast('CiicTreeNode', 'tree-node-expand', node);
         this.tree.$emit('node-expand', nodeData, node, instance);
       },
 

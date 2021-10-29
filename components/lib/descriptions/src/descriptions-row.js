@@ -1,5 +1,5 @@
 export default {
-  name: 'ElDescriptionsRow',
+  name: 'CiicDescriptionsRow',
   props: {
     row: {
       type: Array

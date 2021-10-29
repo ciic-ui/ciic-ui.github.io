@@ -1,8 +1,8 @@
-import ElTabs from './src/tabs';
+import CiicTabs from './src/tabs';
 
 /* istanbul ignore next */
-ElTabs.install = function(Vue) {
-  Vue.component(ElTabs.name, ElTabs);
+CiicTabs.install = function(Vue) {
+  Vue.component(CiicTabs.name, CiicTabs);
 };
 
-export default ElTabs;
+export default CiicTabs;

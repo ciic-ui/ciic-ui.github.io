@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'ElAvatar',
+  name: 'CiicAvatar',
 
   props: {
     size: {

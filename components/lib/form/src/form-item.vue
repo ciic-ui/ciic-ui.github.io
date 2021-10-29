@@ -45,9 +45,9 @@
   import { noop, getPropByPath } from 'element-ui/src/utils/util';
   import LabelWrap from './label-wrap';
   export default {
-    name: 'ElFormItem',
+    name: 'CiicFormItem',
 
-    componentName: 'ElFormItem',
+    componentName: 'CiicFormItem',
 
     mixins: [emitter],
 
@@ -130,8 +130,8 @@
       form() {
         let parent = this.$parent;
         let parentName = parent.$options.componentName;
-        while (parentName !== 'ElForm') {
-          if (parentName === 'ElFormItem') {
+        while (parentName !== 'CiicForm') {
+          if (parentName === 'CiicFormItem') {
             this.isNested = true;
           }
           parent = parent.$parent;
@@ -247,7 +247,7 @@
           this.validateDisabled = false;
         });
 
-        this.broadcast('ElTimeSelect', 'fieldReset', this.initialValue);
+        this.broadcast('CiicTimeSelect', 'fieldReset', this.initialValue);
       },
       getRules() {
         let formRules = this.form.rules;
@@ -299,7 +299,7 @@
     },
     mounted() {
       if (this.prop) {
-        this.dispatch('ElForm', 'el.form.addField', [this]);
+        this.dispatch('CiicForm', 'el.form.addField', [this]);
 
         let initialValue = this.fieldValue;
         if (Array.isArray(initialValue)) {
@@ -313,7 +313,7 @@
       }
     },
     beforeDestroy() {
-      this.dispatch('ElForm', 'el.form.removeField', [this]);
+      this.dispatch('CiicForm', 'el.form.removeField', [this]);
     }
   };
 </script>

@@ -52,29 +52,29 @@
 </template>
 
 <script>
-  import ElCheckboxGroup from 'element-ui/packages/checkbox-group';
-  import ElCheckbox from 'element-ui/packages/checkbox';
-  import ElInput from 'element-ui/packages/input';
+  import CiicCheckboxGroup from 'element-ui/packages/checkbox-group';
+  import CiicCheckbox from 'element-ui/packages/checkbox';
+  import CiicInput from 'element-ui/packages/input';
   import Locale from 'element-ui/src/mixins/locale';
 
   export default {
     mixins: [Locale],
 
-    name: 'ElTransferPanel',
+    name: 'CiicTransferPanel',
 
-    componentName: 'ElTransferPanel',
+    componentName: 'CiicTransferPanel',
 
     components: {
-      ElCheckboxGroup,
-      ElCheckbox,
-      ElInput,
+      CiicCheckboxGroup,
+      CiicCheckbox,
+      CiicInput,
       OptionContent: {
         props: {
           option: Object
         },
         render(h) {
           const getParent = vm => {
-            if (vm.$options.componentName === 'ElTransferPanel') {
+            if (vm.$options.componentName === 'CiicTransferPanel') {
               return vm;
             } else if (vm.$parent) {
               return getParent(vm.$parent);

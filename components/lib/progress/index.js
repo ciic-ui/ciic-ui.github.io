@@ -1,8 +1,8 @@
-import ElProgress from './src/progress';
+import CiicProgress from './src/progress';
 
 /* istanbul ignore next */
-ElProgress.install = function(Vue) {
-  Vue.component(ElProgress.name, ElProgress);
+CiicProgress.install = function(Vue) {
+  Vue.component(CiicProgress.name, CiicProgress);
 };
 
-export default ElProgress;
+export default CiicProgress;

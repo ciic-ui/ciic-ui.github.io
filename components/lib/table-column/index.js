@@ -1,8 +1,8 @@
-import ElTableColumn from '../table/src/table-column';
+import CiicTableColumn from '../table/src/table-column';
 
 /* istanbul ignore next */
-ElTableColumn.install = function(Vue) {
-  Vue.component(ElTableColumn.name, ElTableColumn);
+CiicTableColumn.install = function(Vue) {
+  Vue.component(CiicTableColumn.name, CiicTableColumn);
 };
 
-export default ElTableColumn;
+export default CiicTableColumn;

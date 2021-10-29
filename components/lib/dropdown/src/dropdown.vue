@@ -2,22 +2,22 @@
   import Clickoutside from 'element-ui/src/utils/clickoutside';
   import Emitter from 'element-ui/src/mixins/emitter';
   import Migrating from 'element-ui/src/mixins/migrating';
-  import ElButton from 'element-ui/packages/button';
-  import ElButtonGroup from 'element-ui/packages/button-group';
+  import CiicButton from 'element-ui/packages/button';
+  import CiicButtonGroup from 'element-ui/packages/button-group';
   import { generateId } from 'element-ui/src/utils/util';
 
   export default {
-    name: 'ElDropdown',
+    name: 'CiicDropdown',
 
-    componentName: 'ElDropdown',
+    componentName: 'CiicDropdown',
 
     mixins: [Emitter, Migrating],
 
     directives: { Clickoutside },
 
     components: {
-      ElButton,
-      ElButtonGroup
+      CiicButton,
+      CiicButtonGroup
     },
 
     provide() {
@@ -70,10 +70,10 @@
       return {
         timeout: null,
         visible: false,
-        triggerElm: null,
+        triggerCiicm: null,
         menuItems: null,
         menuItemsArray: null,
-        dropdownElm: null,
+        dropdownCiicm: null,
         focusing: false,
         listId: `dropdown-menu-${generateId()}`
       };
@@ -91,7 +91,7 @@
 
     watch: {
       visible(val) {
-        this.broadcast('ElDropdownMenu', 'visible', val);
+        this.broadcast('CiicDropdownMenu', 'visible', val);
         this.$emit('visible-change', val);
       },
       focusing(val) {
@@ -125,7 +125,7 @@
         if (this.disabled) return;
         this.removeTabindex();
         if (this.tabindex >= 0) {
-          this.resetTabindex(this.triggerElm);
+          this.resetTabindex(this.triggerCiicm);
         }
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
@@ -172,14 +172,14 @@
           ev.preventDefault();
           ev.stopPropagation();
         } else if (keyCode === 13) { // enter选中
-          this.triggerElmFocus();
+          this.triggerCiicmFocus();
           target.click();
           if (this.hideOnClick) { // click关闭
             this.visible = false;
           }
         } else if ([9, 27].indexOf(keyCode) > -1) { // tab // esc
           this.hide();
-          this.triggerElmFocus();
+          this.triggerCiicmFocus();
         }
       },
       resetTabindex(ele) { // 下次tab时组件聚焦元素
@@ -187,51 +187,51 @@
         ele.setAttribute('tabindex', '0'); // 下次期望的聚焦元素
       },
       removeTabindex() {
-        this.triggerElm.setAttribute('tabindex', '-1');
+        this.triggerCiicm.setAttribute('tabindex', '-1');
         this.menuItemsArray.forEach((item) => {
           item.setAttribute('tabindex', '-1');
         });
       },
       initAria() {
-        this.dropdownElm.setAttribute('id', this.listId);
-        this.triggerElm.setAttribute('aria-haspopup', 'list');
-        this.triggerElm.setAttribute('aria-controls', this.listId);
+        this.dropdownCiicm.setAttribute('id', this.listId);
+        this.triggerCiicm.setAttribute('aria-haspopup', 'list');
+        this.triggerCiicm.setAttribute('aria-controls', this.listId);
 
         if (!this.splitButton) { // 自定义
-          this.triggerElm.setAttribute('role', 'button');
-          this.triggerElm.setAttribute('tabindex', this.tabindex);
-          this.triggerElm.setAttribute('class', (this.triggerElm.getAttribute('class') || '') + ' el-dropdown-selfdefine'); // 控制
+          this.triggerCiicm.setAttribute('role', 'button');
+          this.triggerCiicm.setAttribute('tabindex', this.tabindex);
+          this.triggerCiicm.setAttribute('class', (this.triggerCiicm.getAttribute('class') || '') + ' el-dropdown-selfdefine'); // 控制
         }
       },
       initEvent() {
         let { trigger, show, hide, handleClick, splitButton, handleTriggerKeyDown, handleItemKeyDown } = this;
-        this.triggerElm = splitButton
+        this.triggerCiicm = splitButton
           ? this.$refs.trigger.$el
           : this.$slots.default[0].elm;
 
-        let dropdownElm = this.dropdownElm;
+        let dropdownCiicm = this.dropdownCiicm;
 
-        this.triggerElm.addEventListener('keydown', handleTriggerKeyDown); // triggerElm keydown
-        dropdownElm.addEventListener('keydown', handleItemKeyDown, true); // item keydown
+        this.triggerCiicm.addEventListener('keydown', handleTriggerKeyDown); // triggerCiicm keydown
+        dropdownCiicm.addEventListener('keydown', handleItemKeyDown, true); // item keydown
         // 控制自定义元素的样式
         if (!splitButton) {
-          this.triggerElm.addEventListener('focus', () => {
+          this.triggerCiicm.addEventListener('focus', () => {
             this.focusing = true;
           });
-          this.triggerElm.addEventListener('blur', () => {
+          this.triggerCiicm.addEventListener('blur', () => {
             this.focusing = false;
           });
-          this.triggerElm.addEventListener('click', () => {
+          this.triggerCiicm.addEventListener('click', () => {
             this.focusing = false;
           });
         }
         if (trigger === 'hover') {
-          this.triggerElm.addEventListener('mouseenter', show);
-          this.triggerElm.addEventListener('mouseleave', hide);
-          dropdownElm.addEventListener('mouseenter', show);
-          dropdownElm.addEventListener('mouseleave', hide);
+          this.triggerCiicm.addEventListener('mouseenter', show);
+          this.triggerCiicm.addEventListener('mouseleave', hide);
+          dropdownCiicm.addEventListener('mouseenter', show);
+          dropdownCiicm.addEventListener('mouseleave', hide);
         } else if (trigger === 'click') {
-          this.triggerElm.addEventListener('click', handleClick);
+          this.triggerCiicm.addEventListener('click', handleClick);
         }
       },
       handleMenuItemClick(command, instance) {
@@ -240,12 +240,12 @@
         }
         this.$emit('command', command, instance);
       },
-      triggerElmFocus() {
-        this.triggerElm.focus && this.triggerElm.focus();
+      triggerCiicmFocus() {
+        this.triggerCiicm.focus && this.triggerCiicm.focus();
       },
       initDomOperation() {
-        this.dropdownElm = this.popperElm;
-        this.menuItems = this.dropdownElm.querySelectorAll("[tabindex='-1']");
+        this.dropdownCiicm = this.popperCiicm;
+        this.menuItems = this.dropdownCiicm.querySelectorAll("[tabindex='-1']");
         this.menuItemsArray = [].slice.call(this.menuItems);
 
         this.initEvent();
@@ -261,9 +261,9 @@
         hide();
       };
 
-      let triggerElm = null;
+      let triggerCiicm = null;
       if (splitButton) {
-        triggerElm = <el-button-group>
+        triggerCiicm = <el-button-group>
           <el-button type={type} size={dropdownSize} nativeOn-click={handleMainButtonClick} disabled={disabled}>
             {this.$slots.default}
           </el-button>
@@ -272,20 +272,20 @@
           </el-button>
         </el-button-group>;
       } else {
-        triggerElm = this.$slots.default;
-        const vnodeData = triggerElm[0].data || {};
+        triggerCiicm = this.$slots.default;
+        const vnodeData = triggerCiicm[0].data || {};
         let { attrs = {} } = vnodeData;
         if (disabled && !attrs.disabled) {
           attrs.disabled = true;
           vnodeData.attrs = attrs;
         }
       }
-      const menuElm = disabled ? null : this.$slots.dropdown;
+      const menuCiicm = disabled ? null : this.$slots.dropdown;
 
       return (
         <div class="el-dropdown" v-clickoutside={hide} aria-disabled={disabled}>
-          {triggerElm}
-          {menuElm}
+          {triggerCiicm}
+          {menuCiicm}
         </div>
       );
     }

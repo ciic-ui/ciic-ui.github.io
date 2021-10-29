@@ -1,8 +1,8 @@
-import ElButtonGroup from '../button/src/button-group';
+import CiicButtonGroup from '../button/src/button-group';
 
 /* istanbul ignore next */
-ElButtonGroup.install = function(Vue) {
-  Vue.component(ElButtonGroup.name, ElButtonGroup);
+CiicButtonGroup.install = function(Vue) {
+  Vue.component(CiicButtonGroup.name, CiicButtonGroup);
 };
 
-export default ElButtonGroup;
+export default CiicButtonGroup;

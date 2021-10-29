@@ -1,18 +1,18 @@
 <script>
-import ElScrollbar from 'element-ui/packages/scrollbar';
+import CiicScrollbar from 'element-ui/packages/scrollbar';
 import CascaderNode from './cascader-node.vue';
 import Locale from 'element-ui/src/mixins/locale';
 import { generateId } from 'element-ui/src/utils/util';
 
 export default {
-  name: 'ElCascaderMenu',
+  name: 'CiicCascaderMenu',
 
   mixins: [Locale],
 
   inject: ['panel'],
 
   components: {
-    ElScrollbar,
+    CiicScrollbar,
     CascaderNode
   },
 

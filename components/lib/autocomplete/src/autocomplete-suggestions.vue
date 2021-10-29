@@ -20,13 +20,13 @@
 <script>
   import Popper from 'element-ui/src/utils/vue-popper';
   import Emitter from 'element-ui/src/mixins/emitter';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import CiicScrollbar from 'element-ui/packages/scrollbar';
 
   export default {
-    components: { ElScrollbar },
+    components: { CiicScrollbar },
     mixins: [Popper, Emitter],
 
-    componentName: 'ElAutocompleteSuggestions',
+    componentName: 'CiicAutocompleteSuggestions',
 
     data() {
       return {
@@ -48,7 +48,7 @@
 
     methods: {
       select(item) {
-        this.dispatch('ElAutocomplete', 'item-click', item);
+        this.dispatch('CiicAutocomplete', 'item-click', item);
       }
     },
 
@@ -59,8 +59,8 @@
     },
 
     mounted() {
-      this.$parent.popperElm = this.popperElm = this.$el;
-      this.referenceElm = this.$parent.$refs.input.$refs.input || this.$parent.$refs.input.$refs.textarea;
+      this.$parent.popperCiicm = this.popperCiicm = this.$el;
+      this.referenceCiicm = this.$parent.$refs.input.$refs.input || this.$parent.$refs.input.$refs.textarea;
       this.referenceList = this.$el.querySelector('.el-autocomplete-suggestion__list');
       this.referenceList.setAttribute('role', 'listbox');
       this.referenceList.setAttribute('id', this.id);

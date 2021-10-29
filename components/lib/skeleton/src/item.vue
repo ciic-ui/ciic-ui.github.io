@@ -8,7 +8,7 @@
   import ImgPlaceholder from './img-placeholder';
 
   export default {
-    name: 'ElSkeletonItem',
+    name: 'CiicSkeletonItem',
     props: {
       variant: {
         type: String,

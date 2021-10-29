@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { hasClass, addClass, removeClass } from 'element-ui/src/utils/dom';
-import ElCheckbox from 'element-ui/packages/checkbox';
+import CiicCheckbox from 'element-ui/packages/checkbox';
 import FilterPanel from './filter-panel.vue';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store/helper';
@@ -64,7 +64,7 @@ const convertToRows = (originColumns) => {
 };
 
 export default {
-  name: 'ElTableHeader',
+  name: 'CiicTableHeader',
 
   mixins: [LayoutObserver],
 
@@ -164,7 +164,7 @@ export default {
   },
 
   components: {
-    ElCheckbox
+    CiicCheckbox
   },
 
   computed: {
@@ -192,7 +192,7 @@ export default {
   },
 
   mounted() {
-    // nextTick 是有必要的 https://github.com/ElemeFE/element/pull/11311
+    // nextTick 是有必要的 https://github.com/CiicemeFE/element/pull/11311
     this.$nextTick(() => {
       const { prop, order } = this.defaultSort;
       const init = true;
@@ -320,7 +320,7 @@ export default {
         filterPanel.table = table;
         filterPanel.cell = cell;
         filterPanel.column = column;
-        !this.$isServer && filterPanel.$mount(document.createElement('div'));
+        !this.$isServer && filterPanel.$mount(document.createCiicement('div'));
       }
 
       setTimeout(() => {
@@ -352,13 +352,13 @@ export default {
         this.$parent.resizeProxyVisible = true;
 
         const table = this.$parent;
-        const tableEl = table.$el;
-        const tableLeft = tableEl.getBoundingClientRect().left;
-        const columnEl = this.$el.querySelector(`th.${column.id}`);
-        const columnRect = columnEl.getBoundingClientRect();
+        const tableCiic = table.$el;
+        const tableLeft = tableCiic.getBoundingClientRect().left;
+        const columnCiic = this.$el.querySelector(`th.${column.id}`);
+        const columnRect = columnCiic.getBoundingClientRect();
         const minLeft = columnRect.left - tableLeft + 30;
 
-        addClass(columnEl, 'noclick');
+        addClass(columnCiic, 'noclick');
 
         this.dragState = {
           startMouseLeft: event.clientX,
@@ -407,7 +407,7 @@ export default {
           document.ondragstart = null;
 
           setTimeout(function() {
-            removeClass(columnEl, 'noclick');
+            removeClass(columnCiic, 'noclick');
           }, 0);
         };
 

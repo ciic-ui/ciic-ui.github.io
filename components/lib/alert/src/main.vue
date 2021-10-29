@@ -26,7 +26,7 @@
     'error': 'el-icon-error'
   };
   export default {
-    name: 'ElAlert',
+    name: 'CiicAlert',
 
     props: {
       title: {

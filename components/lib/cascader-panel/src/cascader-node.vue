@@ -1,6 +1,6 @@
 <script>
-  import ElCheckbox from 'element-ui/packages/checkbox';
-  import ElRadio from 'element-ui/packages/radio';
+  import CiicCheckbox from 'element-ui/packages/checkbox';
+  import CiicRadio from 'element-ui/packages/radio';
   import { isEqual } from 'element-ui/src/utils/util';
 
   const stopPropagation = e => e.stopPropagation();
@@ -9,8 +9,8 @@
     inject: ['panel'],
 
     components: {
-      ElCheckbox,
-      ElRadio
+      CiicCheckbox,
+      CiicRadio
     },
 
     props: {

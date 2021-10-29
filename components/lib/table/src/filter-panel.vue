@@ -48,12 +48,12 @@
   import Locale from 'element-ui/src/mixins/locale';
   import Clickoutside from 'element-ui/src/utils/clickoutside';
   import Dropdown from './dropdown';
-  import ElCheckbox from 'element-ui/packages/checkbox';
-  import ElCheckboxGroup from 'element-ui/packages/checkbox-group';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import CiicCheckbox from 'element-ui/packages/checkbox';
+  import CiicCheckboxGroup from 'element-ui/packages/checkbox-group';
+  import CiicScrollbar from 'element-ui/packages/scrollbar';
 
   export default {
-    name: 'ElTableFilterPanel',
+    name: 'CiicTableFilterPanel',
 
     mixins: [Popper, Locale],
 
@@ -62,9 +62,9 @@
     },
 
     components: {
-      ElCheckbox,
-      ElCheckboxGroup,
-      ElScrollbar
+      CiicCheckbox,
+      CiicCheckboxGroup,
+      CiicScrollbar
     },
 
     props: {
@@ -168,8 +168,8 @@
     },
 
     mounted() {
-      this.popperElm = this.$el;
-      this.referenceElm = this.cell;
+      this.popperCiicm = this.$el;
+      this.referenceCiicm = this.cell;
       this.table.bodyWrapper.addEventListener('scroll', () => {
         this.updatePopper();
       });

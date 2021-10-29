@@ -2,7 +2,7 @@
   <div class="el-result">
     <div class="el-result__icon">
       <slot name="icon">
-        <component :is="iconElement" :class="iconElement" />
+        <component :is="iconCiicement" :class="iconCiicement" />
       </slot>
     </div>
     <div v-if="title || $slots.title" class="el-result__title">
@@ -34,7 +34,7 @@ const IconMap = {
 };
 
 export default {
-  name: 'ElResult',
+  name: 'CiicResult',
   components: {
     [IconSuccess.name]: IconSuccess,
     [IconError.name]: IconError,
@@ -56,7 +56,7 @@ export default {
     }
   },
   computed: {
-    iconElement() {
+    iconCiicement() {
       const icon = this.icon;
       return icon && IconMap[icon] ? IconMap[icon] : 'icon-info';
     }

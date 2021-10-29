@@ -25,10 +25,10 @@
   import ImageViewer from './image-viewer';
   import Locale from 'element-ui/src/mixins/locale';
   import { on, off, getScrollContainer, isInContainer } from 'element-ui/src/utils/dom';
-  import { isString, isHtmlElement } from 'element-ui/src/utils/types';
+  import { isString, isHtmlCiicement } from 'element-ui/src/utils/types';
   import throttle from 'throttle-debounce/throttle';
 
-  const isSupportObjectFit = () => document.documentElement.style.objectFit !== undefined;
+  const isSupportObjectFit = () => document.documentCiicement.style.objectFit !== undefined;
 
   const ObjectFit = {
     NONE: 'none',
@@ -41,7 +41,7 @@
   let prevOverflow = '';
 
   export default {
-    name: 'ElImage',
+    name: 'CiicImage',
 
     mixins: [Locale],
     inheritAttrs: false,
@@ -168,7 +168,7 @@
         const { scrollContainer } = this;
         let _scrollContainer = null;
 
-        if (isHtmlElement(scrollContainer)) {
+        if (isHtmlCiicement(scrollContainer)) {
           _scrollContainer = scrollContainer;
         } else if (isString(scrollContainer)) {
           _scrollContainer = document.querySelector(scrollContainer);

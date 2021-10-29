@@ -1,5 +1,5 @@
 <script>
-  import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
+  import CiicCollapseTransition from 'element-ui/src/transitions/collapse-transition';
   import menuMixin from './menu-mixin';
   import Emitter from 'element-ui/src/mixins/emitter';
   import Popper from 'element-ui/src/utils/vue-popper';
@@ -21,13 +21,13 @@
   };
 
   export default {
-    name: 'ElSubmenu',
+    name: 'CiicSubmenu',
 
-    componentName: 'ElSubmenu',
+    componentName: 'CiicSubmenu',
 
     mixins: [menuMixin, Emitter, poperMixins],
 
-    components: { ElCollapseTransition },
+    components: { CiicCollapseTransition },
 
     props: {
       index: {
@@ -137,7 +137,7 @@
         let isFirstLevel = true;
         let parent = this.$parent;
         while (parent && parent !== this.rootMenu) {
-          if (['ElSubmenu', 'ElMenuItemGroup'].indexOf(parent.$options.componentName) > -1) {
+          if (['CiicSubmenu', 'CiicMenuItemGroup'].indexOf(parent.$options.componentName) > -1) {
             isFirstLevel = false;
             break;
           } else {
@@ -176,7 +176,7 @@
         ) {
           return;
         }
-        this.dispatch('ElMenu', 'submenu-click', this);
+        this.dispatch('CiicMenu', 'submenu-click', this);
       },
       handleMouseenter(event, showTimeout = this.showTimeout) {
 
@@ -191,7 +191,7 @@
         ) {
           return;
         }
-        this.dispatch('ElSubmenu', 'mouse-enter-child');
+        this.dispatch('CiicSubmenu', 'mouse-enter-child');
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           this.rootMenu.openMenu(this.index, this.indexPath);
@@ -209,14 +209,14 @@
         ) {
           return;
         }
-        this.dispatch('ElSubmenu', 'mouse-leave-child');
+        this.dispatch('CiicSubmenu', 'mouse-leave-child');
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
           !this.mouseInChild && this.rootMenu.closeMenu(this.index);
         }, this.hideTimeout);
 
         if (this.appendToBody && deepDispatch) {
-          if (this.$parent.$options.name === 'ElSubmenu') {
+          if (this.$parent.$options.name === 'CiicSubmenu') {
             this.$parent.handleMouseleave(true);
           }
         }
@@ -237,8 +237,8 @@
           : 'right-start';
       },
       initPopper() {
-        this.referenceElm = this.$el;
-        this.popperElm = this.$refs.menu;
+        this.referenceCiicm = this.$el;
+        this.popperCiicm = this.$refs.menu;
         this.updatePlacement();
       }
     },

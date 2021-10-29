@@ -42,20 +42,20 @@
 </template>
 
 <script>
-  import ElButton from 'element-ui/packages/button';
+  import CiicButton from 'element-ui/packages/button';
   import Emitter from 'element-ui/src/mixins/emitter';
   import Locale from 'element-ui/src/mixins/locale';
   import TransferPanel from './transfer-panel.vue';
   import Migrating from 'element-ui/src/mixins/migrating';
 
   export default {
-    name: 'ElTransfer',
+    name: 'CiicTransfer',
 
     mixins: [Emitter, Locale, Migrating],
 
     components: {
       TransferPanel,
-      ElButton
+      CiicButton
     },
 
     props: {
@@ -162,7 +162,7 @@
 
     watch: {
       value(val) {
-        this.dispatch('ElFormItem', 'el.form.change', val);
+        this.dispatch('CiicFormItem', 'el.form.change', val);
       }
     },
 

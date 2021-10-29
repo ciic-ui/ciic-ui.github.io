@@ -5,7 +5,7 @@ import { generateId } from 'element-ui/src/utils/util';
 import Vue from 'vue';
 
 export default {
-  name: 'ElTooltip',
+  name: 'CiicTooltip',
 
   mixins: [Popper],
 
@@ -97,23 +97,23 @@ export default {
         </transition>);
     }
 
-    const firstElement = this.getFirstElement();
-    if (!firstElement) return null;
+    const firstCiicement = this.getFirstCiicement();
+    if (!firstCiicement) return null;
 
-    const data = firstElement.data = firstElement.data || {};
+    const data = firstCiicement.data = firstCiicement.data || {};
     data.staticClass = this.addTooltipClass(data.staticClass);
 
-    return firstElement;
+    return firstCiicement;
   },
 
   mounted() {
-    this.referenceElm = this.$el;
+    this.referenceCiicm = this.$el;
     if (this.$el.nodeType === 1) {
       this.$el.setAttribute('aria-describedby', this.tooltipId);
       this.$el.setAttribute('tabindex', this.tabindex);
-      on(this.referenceElm, 'mouseenter', this.show);
-      on(this.referenceElm, 'mouseleave', this.hide);
-      on(this.referenceElm, 'focus', () => {
+      on(this.referenceCiicm, 'mouseenter', this.show);
+      on(this.referenceCiicm, 'mouseleave', this.hide);
+      on(this.referenceCiicm, 'focus', () => {
         if (!this.$slots.default || !this.$slots.default.length) {
           this.handleFocus();
           return;
@@ -125,10 +125,10 @@ export default {
           this.handleFocus();
         }
       });
-      on(this.referenceElm, 'blur', this.handleBlur);
-      on(this.referenceElm, 'click', this.removeFocusing);
+      on(this.referenceCiicm, 'blur', this.handleBlur);
+      on(this.referenceCiicm, 'click', this.removeFocusing);
     }
-    // fix issue https://github.com/ElemeFE/element/issues/14424
+    // fix issue https://github.com/CiicemeFE/element/issues/14424
     if (this.value && this.popperVM) {
       this.popperVM.$nextTick(() => {
         if (this.value) {
@@ -140,9 +140,9 @@ export default {
   watch: {
     focusing(val) {
       if (val) {
-        addClass(this.referenceElm, 'focusing');
+        addClass(this.referenceCiicm, 'focusing');
       } else {
-        removeClass(this.referenceElm, 'focusing');
+        removeClass(this.referenceCiicm, 'focusing');
       }
     }
   },
@@ -211,7 +211,7 @@ export default {
       this.expectedState = expectedState;
     },
 
-    getFirstElement() {
+    getFirstCiicement() {
       const slots = this.$slots.default;
       if (!Array.isArray(slots)) return null;
       let element = null;
@@ -229,7 +229,7 @@ export default {
   },
 
   destroyed() {
-    const reference = this.referenceElm;
+    const reference = this.referenceCiicm;
     if (reference.nodeType === 1) {
       off(reference, 'mouseenter', this.show);
       off(reference, 'mouseleave', this.hide);

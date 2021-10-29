@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'ElMain',
-    componentName: 'ElMain'
+    name: 'CiicMain',
+    componentName: 'CiicMain'
   };
 </script>

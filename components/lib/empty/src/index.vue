@@ -21,7 +21,7 @@ import ImgEmpty from './img-empty.vue';
 import { t } from 'element-ui/src/locale';
 
 export default {
-  name: 'ElEmpty',
+  name: 'CiicEmpty',
   components: {
     [ImgEmpty.name]: ImgEmpty
   },

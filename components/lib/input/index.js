@@ -1,8 +1,8 @@
-import ElInput from './src/input';
+import CiicInput from './src/input';
 
 /* istanbul ignore next */
-ElInput.install = function(Vue) {
-  Vue.component(ElInput.name, ElInput);
+CiicInput.install = function(Vue) {
+  Vue.component(CiicInput.name, CiicInput);
 };
 
-export default ElInput;
+export default CiicInput;

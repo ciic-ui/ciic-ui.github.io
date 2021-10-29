@@ -1,6 +1,6 @@
 import throttle from 'throttle-debounce/debounce';
 import {
-  isHtmlElement,
+  isHtmlCiicement,
   isFunction,
   isUndefined,
   isDefined
@@ -11,7 +11,7 @@ import {
 
 const getStyleComputedProperty = (element, property) => {
   if (element === window) {
-    element = document.documentElement;
+    element = document.documentCiicement;
   }
 
   if (element.nodeType !== 1) {
@@ -29,7 +29,7 @@ const entries = (obj) => {
 
 const getPositionSize = (el, prop) => {
   return el === window || el === document
-    ? document.documentElement[prop]
+    ? document.documentCiicement[prop]
     : el[prop];
 };
 
@@ -41,7 +41,7 @@ const getClientHeight = el => {
   return getPositionSize(el, 'clientHeight');
 };
 
-const scope = 'ElInfiniteScroll';
+const scope = 'CiicInfiniteScroll';
 const attributes = {
   delay: {
     type: Number,
@@ -62,7 +62,7 @@ const attributes = {
 };
 
 const getScrollOptions = (el, vm) => {
-  if (!isHtmlElement(el)) return {};
+  if (!isHtmlCiicement(el)) return {};
 
   return entries(attributes).reduce((map, [key, option]) => {
     const { type, default: defaultValue } = option;
@@ -84,7 +84,7 @@ const getScrollOptions = (el, vm) => {
   }, {});
 };
 
-const getElementTop = el => el.getBoundingClientRect().top;
+const getCiicementTop = el => el.getBoundingClientRect().top;
 
 const handleScroll = function(cb) {
   const { el, vm, container, observer } = this[scope];
@@ -102,7 +102,7 @@ const handleScroll = function(cb) {
     const scrollBottom = container.scrollTop + getClientHeight(container);
     shouldTrigger = container.scrollHeight - scrollBottom <= distance;
   } else {
-    const heightBelowTop = getOffsetHeight(el) + getElementTop(el) - getElementTop(container);
+    const heightBelowTop = getOffsetHeight(el) + getCiicementTop(el) - getCiicementTop(container);
     const offsetHeight = getOffsetHeight(container);
     const borderBottom = Number.parseFloat(getStyleComputedProperty(container, 'borderBottomWidth'));
     shouldTrigger = heightBelowTop - offsetHeight + borderBottom <= distance;

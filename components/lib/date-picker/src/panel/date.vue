@@ -164,8 +164,8 @@
   } from 'element-ui/src/utils/date-util';
   import Clickoutside from 'element-ui/src/utils/clickoutside';
   import Locale from 'element-ui/src/mixins/locale';
-  import ElInput from 'element-ui/packages/input';
-  import ElButton from 'element-ui/packages/button';
+  import CiicInput from 'element-ui/packages/input';
+  import CiicButton from 'element-ui/packages/button';
   import TimePicker from './time';
   import YearTable from '../basic/year-table';
   import MonthTable from '../basic/month-table';
@@ -181,9 +181,9 @@
         /* istanbul ignore if */
         if (!val) return;
         this.$nextTick(_ => {
-          const inputElm = this.$refs.input.$el;
-          if (inputElm) {
-            this.pickerWidth = inputElm.getBoundingClientRect().width + 10;
+          const inputCiicm = this.$refs.input.$el;
+          if (inputCiicm) {
+            this.pickerWidth = inputCiicm.getBoundingClientRect().width + 10;
           }
         });
       },
@@ -500,7 +500,7 @@
     },
 
     components: {
-      TimePicker, YearTable, MonthTable, DateTable, ElInput, ElButton
+      TimePicker, YearTable, MonthTable, DateTable, CiicInput, CiicButton
     },
 
     data() {

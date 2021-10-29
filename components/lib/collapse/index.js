@@ -1,9 +1,9 @@
-import ElCollapse from './src/collapse';
+import CiicCollapse from './src/collapse';
 
 /* istanbul ignore next */
-ElCollapse.install = function(Vue) {
-  Vue.component(ElCollapse.name, ElCollapse);
+CiicCollapse.install = function(Vue) {
+  Vue.component(CiicCollapse.name, CiicCollapse);
 };
 
-export default ElCollapse;
+export default CiicCollapse;
 

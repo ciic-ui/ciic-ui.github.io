@@ -1,8 +1,8 @@
-import ElDialog from './src/component';
+import CiicDialog from './src/component';
 
 /* istanbul ignore next */
-ElDialog.install = function(Vue) {
-  Vue.component(ElDialog.name, ElDialog);
+CiicDialog.install = function(Vue) {
+  Vue.component(CiicDialog.name, CiicDialog);
 };
 
-export default ElDialog;
+export default CiicDialog;

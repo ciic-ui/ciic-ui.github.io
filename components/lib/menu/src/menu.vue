@@ -5,7 +5,7 @@
   import { addClass, removeClass, hasClass } from 'element-ui/src/utils/dom';
 
   export default {
-    name: 'ElMenu',
+    name: 'CiicMenu',
 
     render (h) {
       const component = (
@@ -34,7 +34,7 @@
       }
     },
 
-    componentName: 'ElMenu',
+    componentName: 'CiicMenu',
 
     mixins: [emitter, Migrating],
 
@@ -47,7 +47,7 @@
     components: {
       'el-menu-collapse-transition': {
         functional: true,
-        render(createElement, context) {
+        render(createCiicement, context) {
           const data = {
             props: {
               mode: 'out-in'
@@ -92,7 +92,7 @@
               }
             }
           };
-          return createElement('transition', data, context.children);
+          return createCiicement('transition', data, context.children);
         }
       }
     },
@@ -154,7 +154,7 @@
 
       collapse(value) {
         if (value) this.openedMenus = [];
-        this.broadcast('ElSubmenu', 'toggle-collapse', value);
+        this.broadcast('CiicSubmenu', 'toggle-collapse', value);
       }
     },
     methods: {
@@ -273,7 +273,7 @@
             this.activeIndex = oldActiveIndex;
             if (error) {
               // vue-router 3.1.0+ push/replace cause NavigationDuplicated error 
-              // https://github.com/ElemeFE/element/issues/17044
+              // https://github.com/CiicemeFE/element/issues/17044
               if (error.name === 'NavigationDuplicated') return
               console.error(error)
             }

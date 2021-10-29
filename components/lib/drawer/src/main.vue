@@ -51,7 +51,7 @@ import Popup from 'element-ui/src/utils/popup';
 import emitter from 'element-ui/src/mixins/emitter';
 
 export default {
-  name: 'ElDrawer',
+  name: 'CiicDrawer',
   mixins: [Popup, emitter],
   props: {
     appendToBody: {
@@ -123,7 +123,7 @@ export default {
   data() {
     return {
       closed: false,
-      prevActiveElement: null
+      prevActiveCiicement: null
     };
   },
   watch: {
@@ -134,7 +134,7 @@ export default {
         if (this.appendToBody) {
           document.body.appendChild(this.$el);
         }
-        this.prevActiveElement = document.activeElement;
+        this.prevActiveCiicement = document.activeCiicement;
       } else {
         if (!this.closed) {
           this.$emit('close');
@@ -143,8 +143,8 @@ export default {
           }
         }
         this.$nextTick(() => {
-          if (this.prevActiveElement) {
-            this.prevActiveElement.focus();
+          if (this.prevActiveCiicement) {
+            this.prevActiveCiicement.focus();
           }
         });
       }

@@ -1,9 +1,9 @@
-import ElCol from './src/col';
+import CiicCol from './src/col';
 
 /* istanbul ignore next */
-ElCol.install = function(Vue) {
-  Vue.component(ElCol.name, ElCol);
+CiicCol.install = function(Vue) {
+  Vue.component(CiicCol.name, CiicCol);
 };
 
-export default ElCol;
+export default CiicCol;
 

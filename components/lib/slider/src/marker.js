@@ -1,5 +1,5 @@
 export default {
-  name: 'ElMarker',
+  name: 'CiicMarker',
 
   props: {
     mark: {

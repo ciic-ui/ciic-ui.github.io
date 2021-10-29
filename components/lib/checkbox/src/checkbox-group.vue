@@ -2,9 +2,9 @@
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElCheckboxGroup',
+    name: 'CiicCheckboxGroup',
 
-    componentName: 'ElCheckboxGroup',
+    componentName: 'CiicCheckboxGroup',
 
     mixins: [Emitter],
 
@@ -35,7 +35,7 @@
 
     watch: {
       value(value) {
-        this.dispatch('ElFormItem', 'el.form.change', [value]);
+        this.dispatch('CiicFormItem', 'el.form.change', [value]);
       }
     }
   };

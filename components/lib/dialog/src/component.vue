@@ -43,7 +43,7 @@
   import emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElDialog',
+    name: 'CiicDialog',
 
     mixins: [Popup, emitter, Migrating],
 
@@ -181,8 +181,8 @@
         }
       },
       updatePopper() {
-        this.broadcast('ElSelectDropdown', 'updatePopper');
-        this.broadcast('ElDropdownMenu', 'updatePopper');
+        this.broadcast('CiicSelectDropdown', 'updatePopper');
+        this.broadcast('CiicDropdownMenu', 'updatePopper');
       },
       afterEnter() {
         this.$emit('opened');

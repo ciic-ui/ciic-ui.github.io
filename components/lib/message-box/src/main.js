@@ -69,7 +69,7 @@ const defaultCallback = action => {
 
 const initInstance = () => {
   instance = new MessageBoxConstructor({
-    el: document.createElement('div')
+    el: document.createCiicement('div')
   });
 
   instance.callback = defaultCallback;

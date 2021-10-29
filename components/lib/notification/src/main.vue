@@ -84,14 +84,14 @@
       closed(newVal) {
         if (newVal) {
           this.visible = false;
-          this.$el.addEventListener('transitionend', this.destroyElement);
+          this.$el.addEventListener('transitionend', this.destroyCiicement);
         }
       }
     },
 
     methods: {
-      destroyElement() {
-        this.$el.removeEventListener('transitionend', this.destroyElement);
+      destroyCiicement() {
+        this.$el.removeEventListener('transitionend', this.destroyCiicement);
         this.$destroy(true);
         this.$el.parentNode.removeChild(this.$el);
       },

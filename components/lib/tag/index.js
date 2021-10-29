@@ -1,8 +1,8 @@
-import ElTag from './src/tag';
+import CiicTag from './src/tag';
 
 /* istanbul ignore next */
-ElTag.install = function(Vue) {
-  Vue.component(ElTag.name, ElTag);
+CiicTag.install = function(Vue) {
+  Vue.component(CiicTag.name, CiicTag);
 };
 
-export default ElTag;
+export default CiicTag;

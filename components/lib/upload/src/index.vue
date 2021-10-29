@@ -1,18 +1,18 @@
 <script>
 import UploadList from './upload-list';
 import Upload from './upload';
-import ElProgress from 'element-ui/packages/progress';
+import CiicProgress from 'element-ui/packages/progress';
 import Migrating from 'element-ui/src/mixins/migrating';
 
 function noop() {}
 
 export default {
-  name: 'ElUpload',
+  name: 'CiicUpload',
 
   mixins: [Migrating],
 
   components: {
-    ElProgress,
+    CiicProgress,
     UploadList,
     Upload
   },
@@ -129,7 +129,7 @@ export default {
             try {
               file.url = URL.createObjectURL(file.raw);
             } catch (err) {
-              console.error('[Element Error][Upload]', err);
+              console.error('[Ciicement Error][Upload]', err);
             }
           }
           return file;
@@ -164,7 +164,7 @@ export default {
         try {
           file.url = URL.createObjectURL(rawFile);
         } catch (err) {
-          console.error('[Element Error][Upload]', err);
+          console.error('[Ciicement Error][Upload]', err);
           return;
         }
       }

@@ -74,13 +74,13 @@
 </template>
 
 <script type="text/babel">
-  import ElInputNumber from 'element-ui/packages/input-number';
+  import CiicInputNumber from 'element-ui/packages/input-number';
   import SliderButton from './button.vue';
   import SliderMarker from './marker';
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElSlider',
+    name: 'CiicSlider',
 
     mixins: [Emitter],
 
@@ -155,7 +155,7 @@
     },
 
     components: {
-      ElInputNumber,
+      CiicInputNumber,
       SliderButton,
       SliderMarker
     },
@@ -221,7 +221,7 @@
       },
       setValues() {
         if (this.min > this.max) {
-          console.error('[Element Error][Slider]min should not be greater than max.');
+          console.error('[Ciicement Error][Slider]min should not be greater than max.');
           return;
         }
         const val = this.value;
@@ -238,7 +238,7 @@
             this.firstValue = val[0];
             this.secondValue = val[1];
             if (this.valueChanged()) {
-              this.dispatch('ElFormItem', 'el.form.change', [this.minValue, this.maxValue]);
+              this.dispatch('CiicFormItem', 'el.form.change', [this.minValue, this.maxValue]);
               this.oldValue = val.slice();
             }
           }
@@ -250,7 +250,7 @@
           } else {
             this.firstValue = val;
             if (this.valueChanged()) {
-              this.dispatch('ElFormItem', 'el.form.change', val);
+              this.dispatch('CiicFormItem', 'el.form.change', val);
               this.oldValue = val;
             }
           }
@@ -307,7 +307,7 @@
         if (!this.showStops || this.min > this.max) return [];
         if (this.step === 0) {
           process.env.NODE_ENV !== 'production' &&
-          console.warn('[Element Warn][Slider]step should not be 0.');
+          console.warn('[Ciicement Warn][Slider]step should not be 0.');
           return [];
         }
         const stopCount = (this.max - this.min) / this.step;

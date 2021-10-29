@@ -28,8 +28,8 @@ const CONTEXT_STYLE = [
   'box-sizing'
 ];
 
-function calculateNodeStyling(targetElement) {
-  const style = window.getComputedStyle(targetElement);
+function calculateNodeStyling(targetCiicement) {
+  const style = window.getComputedStyle(targetCiicement);
 
   const boxSizing = style.getPropertyValue('box-sizing');
 
@@ -51,12 +51,12 @@ function calculateNodeStyling(targetElement) {
 }
 
 export default function calcTextareaHeight(
-  targetElement,
+  targetCiicement,
   minRows = 1,
   maxRows = null
 ) {
   if (!hiddenTextarea) {
-    hiddenTextarea = document.createElement('textarea');
+    hiddenTextarea = document.createCiicement('textarea');
     document.body.appendChild(hiddenTextarea);
   }
 
@@ -65,10 +65,10 @@ export default function calcTextareaHeight(
     borderSize,
     boxSizing,
     contextStyle
-  } = calculateNodeStyling(targetElement);
+  } = calculateNodeStyling(targetCiicement);
 
   hiddenTextarea.setAttribute('style', `${contextStyle};${HIDDEN_STYLE}`);
-  hiddenTextarea.value = targetElement.value || targetElement.placeholder || '';
+  hiddenTextarea.value = targetCiicement.value || targetCiicement.placeholder || '';
 
   let height = hiddenTextarea.scrollHeight;
   const result = {};

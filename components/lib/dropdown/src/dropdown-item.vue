@@ -17,7 +17,7 @@
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElDropdownItem',
+    name: 'CiicDropdownItem',
 
     mixins: [Emitter],
 
@@ -30,7 +30,7 @@
 
     methods: {
       handleClick(e) {
-        this.dispatch('ElDropdown', 'menu-item-click', [this.command, this]);
+        this.dispatch('CiicDropdown', 'menu-item-click', [this.command, this]);
       }
     }
   };

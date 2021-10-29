@@ -1,8 +1,8 @@
-import ElMenu from './src/menu';
+import CiicMenu from './src/menu';
 
 /* istanbul ignore next */
-ElMenu.install = function(Vue) {
-  Vue.component(ElMenu.name, ElMenu);
+CiicMenu.install = function(Vue) {
+  Vue.component(CiicMenu.name, CiicMenu);
 };
 
-export default ElMenu;
+export default CiicMenu;

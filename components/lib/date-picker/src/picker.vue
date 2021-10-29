@@ -89,7 +89,7 @@ import Clickoutside from 'element-ui/src/utils/clickoutside';
 import { formatDate, parseDate, isDateObject, getWeekNumber } from 'element-ui/src/utils/date-util';
 import Popper from 'element-ui/src/utils/vue-popper';
 import Emitter from 'element-ui/src/mixins/emitter';
-import ElInput from 'element-ui/packages/input';
+import CiicInput from 'element-ui/packages/input';
 import merge from 'element-ui/src/utils/merge';
 
 const NewPopper = {
@@ -391,7 +391,7 @@ export default {
     }
   },
 
-  components: { ElInput },
+  components: { CiicInput },
 
   directives: { Clickoutside },
 
@@ -416,7 +416,7 @@ export default {
         this.emitChange(this.value);
         this.userInput = null;
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.blur');
+          this.dispatch('CiicFormItem', 'el.form.blur');
         }
         this.$emit('blur', this);
         this.blur();
@@ -438,7 +438,7 @@ export default {
     },
     value(val, oldVal) {
       if (!valueEquals(val, oldVal) && !this.pickerVisible && this.validateEvent) {
-        this.dispatch('ElFormItem', 'el.form.change', val);
+        this.dispatch('CiicFormItem', 'el.form.change', val);
       }
     }
   },
@@ -753,7 +753,7 @@ export default {
         } else {
           // user may change focus between two input
           setTimeout(() => {
-            if (this.refInput.indexOf(document.activeElement) === -1) {
+            if (this.refInput.indexOf(document.activeCiicement) === -1) {
               this.pickerVisible = false;
               this.blur();
               event.stopPropagation();
@@ -825,7 +825,7 @@ export default {
       this.picker.defaultValue = this.defaultValue;
       this.picker.defaultTime = this.defaultTime;
       this.picker.popperClass = this.popperClass;
-      this.popperElm = this.picker.$el;
+      this.popperCiicm = this.picker.$el;
       this.picker.width = this.reference.getBoundingClientRect().width;
       this.picker.showTime = this.type === 'datetime' || this.type === 'datetimerange';
       this.picker.selectionMode = this.selectionMode;
@@ -902,7 +902,7 @@ export default {
         this.$emit('change', val);
         this.valueOnOpen = val;
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.change', val);
+          this.dispatch('CiicFormItem', 'el.form.change', val);
         }
       }
     },

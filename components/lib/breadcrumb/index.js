@@ -1,8 +1,8 @@
-import ElBreadcrumb from './src/breadcrumb';
+import CiicBreadcrumb from './src/breadcrumb';
 
 /* istanbul ignore next */
-ElBreadcrumb.install = function(Vue) {
-  Vue.component(ElBreadcrumb.name, ElBreadcrumb);
+CiicBreadcrumb.install = function(Vue) {
+  Vue.component(CiicBreadcrumb.name, CiicBreadcrumb);
 };
 
-export default ElBreadcrumb;
+export default CiicBreadcrumb;

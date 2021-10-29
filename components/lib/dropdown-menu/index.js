@@ -1,8 +1,8 @@
-import ElDropdownMenu from '../dropdown/src/dropdown-menu';
+import CiicDropdownMenu from '../dropdown/src/dropdown-menu';
 
 /* istanbul ignore next */
-ElDropdownMenu.install = function(Vue) {
-  Vue.component(ElDropdownMenu.name, ElDropdownMenu);
+CiicDropdownMenu.install = function(Vue) {
+  Vue.component(CiicDropdownMenu.name, CiicDropdownMenu);
 };
 
-export default ElDropdownMenu;
+export default CiicDropdownMenu;

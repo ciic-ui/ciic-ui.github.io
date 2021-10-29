@@ -2,7 +2,7 @@
   import TabNav from './tab-nav';
 
   export default {
-    name: 'ElTabs',
+    name: 'CiicTabs',
 
     components: {
       TabNav
@@ -58,7 +58,7 @@
       calcPaneInstances(isForceUpdate = false) {
         if (this.$slots.default) {
           const paneSlots = this.$slots.default.filter(vnode => vnode.tag &&
-            vnode.componentOptions && vnode.componentOptions.Ctor.options.name === 'ElTabPane');
+            vnode.componentOptions && vnode.componentOptions.Ctor.options.name === 'CiicTabPane');
           // update indeed
           const panes = paneSlots.map(({ componentInstance }) => componentInstance);
           const panesChanged = !(panes.length === this.panes.length && panes.every((pane, index) => pane === this.panes[index]));
@@ -97,7 +97,7 @@
                 changeCurrentName();
                 this.$refs.nav && this.$refs.nav.removeFocus();
               }, () => {
-                // https://github.com/ElemeFE/element/pull/14816
+                // https://github.com/CiicemeFE/element/pull/14816
                 // ignore promise rejection in `before-leave` hook
               });
           } else if (before !== false) {

@@ -24,7 +24,7 @@ const easeInOutCubic = value => value < 0.5
   : 1 - cubic((1 - value) * 2) / 2;
 
 export default {
-  name: 'ElBacktop',
+  name: 'CiicBacktop',
 
   props: {
     visibilityHeight: {
@@ -68,7 +68,7 @@ export default {
   methods: {
     init() {
       this.container = document;
-      this.el = document.documentElement;
+      this.el = document.documentCiicement;
       if (this.target) {
         this.el = document.querySelector(this.target);
         if (!this.el) {

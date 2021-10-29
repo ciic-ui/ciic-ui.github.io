@@ -1,8 +1,8 @@
-import ElForm from './src/form';
+import CiicForm from './src/form';
 
 /* istanbul ignore next */
-ElForm.install = function(Vue) {
-  Vue.component(ElForm.name, ElForm);
+CiicForm.install = function(Vue) {
+  Vue.component(CiicForm.name, CiicForm);
 };
 
-export default ElForm;
+export default CiicForm;

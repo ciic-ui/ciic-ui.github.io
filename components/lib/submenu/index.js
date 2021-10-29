@@ -1,8 +1,8 @@
-import ElSubmenu from '../menu/src/submenu';
+import CiicSubmenu from '../menu/src/submenu';
 
 /* istanbul ignore next */
-ElSubmenu.install = function(Vue) {
-  Vue.component(ElSubmenu.name, ElSubmenu);
+CiicSubmenu.install = function(Vue) {
+  Vue.component(CiicSubmenu.name, CiicSubmenu);
 };
 
-export default ElSubmenu;
+export default CiicSubmenu;

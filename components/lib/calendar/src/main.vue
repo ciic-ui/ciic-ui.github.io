@@ -59,8 +59,8 @@
 <script>
 import Locale from 'element-ui/src/mixins/locale';
 import fecha from 'element-ui/src/utils/date';
-import ElButton from 'element-ui/packages/button';
-import ElButtonGroup from 'element-ui/packages/button-group';
+import CiicButton from 'element-ui/packages/button';
+import CiicButtonGroup from 'element-ui/packages/button-group';
 import DateTable from './date-table';
 import { validateRangeInOneMonth } from 'element-ui/src/utils/date-util';
 
@@ -69,14 +69,14 @@ const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 const oneDay = 86400000;
 
 export default {
-  name: 'ElCalendar',
+  name: 'CiicCalendar',
 
   mixins: [Locale],
 
   components: {
     DateTable,
-    ElButton,
-    ElButtonGroup
+    CiicButton,
+    CiicButtonGroup
   },
 
   props: {
@@ -140,7 +140,7 @@ export default {
       const expected = isStart ? firstDayOfWeek : (firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1);
       const message = `${isStart ? 'start' : 'end'} of range should be ${weekDays[expected]}.`;
       if (date.getDay() !== expected) {
-        console.warn('[ElementCalendar]', message, 'Invalid range will be ignored.');
+        console.warn('[CiicementCalendar]', message, 'Invalid range will be ignored.');
         return false;
       }
       return true;
@@ -217,7 +217,7 @@ export default {
       if (range.length === 2) {
         const [start, end] = range;
         if (start > end) {
-          console.warn('[ElementCalendar]end time should be greater than start time');
+          console.warn('[CiicementCalendar]end time should be greater than start time');
           return [];
         }
         // start time and end time in one month
@@ -230,7 +230,7 @@ export default {
         let startDay = new Date(start.getFullYear(), start.getMonth() + 1, 1);
         const lastDay = this.toDate(startDay.getTime() - oneDay);
         if (!validateRangeInOneMonth(startDay, end)) {
-          console.warn('[ElementCalendar]start time and end time interval must not exceed two months');
+          console.warn('[CiicementCalendar]start time and end time interval must not exceed two months');
           return [];
         }
         // 第一个月的时间范围

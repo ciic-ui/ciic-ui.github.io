@@ -2,7 +2,7 @@ import DescriptionsRow from './descriptions-row';
 import { isFunction } from 'element-ui/src/utils/types';
 
 export default {
-  name: 'ElDescriptions',
+  name: 'CiicDescriptions',
   components: {
     [DescriptionsRow.name]: DescriptionsRow
   },
@@ -83,7 +83,7 @@ export default {
       const children = vnode.children || componentOptions.children || [];
       const slots = {};
       children.forEach(child => {
-        if (!this.isEmptyElement(child)) {
+        if (!this.isEmptyCiicement(child)) {
           const name = (child.data && child.data.slot) || 'default';
           slots[name] = slots[name] || [];
           if (child.tag === 'template') {
@@ -95,7 +95,7 @@ export default {
       });
       return { ...slots };
     },
-    isEmptyElement(c) {
+    isEmptyCiicement(c) {
       return !(c.tag || (c.text && c.text.trim() !== ''));
     },
     filledNode(node, span, count, isLast = false) {
@@ -113,7 +113,7 @@ export default {
     },
     getRows() {
       const children = ((this.$slots.default || []).filter(vnode => vnode.tag &&
-            vnode.componentOptions && vnode.componentOptions.Ctor.options.name === 'ElDescriptionsItem'));
+            vnode.componentOptions && vnode.componentOptions.Ctor.options.name === 'CiicDescriptionsItem'));
       const nodes = children.map(vnode => {
         return {
           props: this.getOptionProps(vnode),

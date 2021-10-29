@@ -41,7 +41,7 @@
   import Migrating from 'element-ui/src/mixins/migrating';
 
   export default {
-    name: 'ElSwitch',
+    name: 'CiicSwitch',
     mixins: [Focus('input'), Migrating, emitter],
     inject: {
       elForm: {
@@ -122,7 +122,7 @@
           this.setBackgroundColor();
         }
         if (this.validateEvent) {
-          this.dispatch('ElFormItem', 'el.form.change', [this.value]);
+          this.dispatch('CiicFormItem', 'el.form.change', [this.value]);
         }
       }
     },

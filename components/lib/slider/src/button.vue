@@ -28,13 +28,13 @@
 </template>
 
 <script>
-  import ElTooltip from 'element-ui/packages/tooltip';
+  import CiicTooltip from 'element-ui/packages/tooltip';
 
   export default {
-    name: 'ElSliderButton',
+    name: 'CiicSliderButton',
 
     components: {
-      ElTooltip
+      CiicTooltip
     },
 
     props: {

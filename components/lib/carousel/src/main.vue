@@ -59,7 +59,7 @@ import throttle from 'throttle-debounce/throttle';
 import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
 
 export default {
-  name: 'ElCarousel',
+  name: 'CiicCarousel',
 
   props: {
     initialIndex: {
@@ -207,7 +207,7 @@ export default {
     },
 
     updateItems() {
-      this.items = this.$children.filter(child => child.$options.name === 'ElCarouselItem');
+      this.items = this.$children.filter(child => child.$options.name === 'CiicCarouselItem');
     },
 
     resetItemPosition(oldIndex) {
@@ -250,7 +250,7 @@ export default {
       }
       index = Number(index);
       if (isNaN(index) || index !== Math.floor(index)) {
-        console.warn('[Element Warn][Carousel]index must be an integer.');
+        console.warn('[Ciicement Warn][Carousel]index must be an integer.');
         return;
       }
       let length = this.items.length;

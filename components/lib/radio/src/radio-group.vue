@@ -18,9 +18,9 @@
     DOWN: 40
   });
   export default {
-    name: 'ElRadioGroup',
+    name: 'CiicRadioGroup',
 
-    componentName: 'ElRadioGroup',
+    componentName: 'CiicRadioGroup',
 
     inject: {
       elFormItem: {
@@ -105,7 +105,7 @@
     },
     watch: {
       value(value) {
-        this.dispatch('ElFormItem', 'el.form.change', [this.value]);
+        this.dispatch('CiicFormItem', 'el.form.change', [this.value]);
       }
     }
   };

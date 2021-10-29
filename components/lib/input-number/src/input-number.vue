@@ -46,12 +46,12 @@
   </div>
 </template>
 <script>
-  import ElInput from 'element-ui/packages/input';
+  import CiicInput from 'element-ui/packages/input';
   import Focus from 'element-ui/src/mixins/focus';
   import RepeatClick from 'element-ui/src/directives/repeat-click';
 
   export default {
-    name: 'ElInputNumber',
+    name: 'CiicInputNumber',
     mixins: [Focus('input')],
     inject: {
       elForm: {
@@ -65,7 +65,7 @@
       repeatClick: RepeatClick
     },
     components: {
-      ElInput
+      CiicInput
     },
     props: {
       step: {
@@ -151,7 +151,7 @@
         const stepPrecision = getPrecision(step);
         if (precision !== undefined) {
           if (stepPrecision > precision) {
-            console.warn('[Element Warn][InputNumber]precision should not be less than the decimal places of step');
+            console.warn('[Ciicement Warn][InputNumber]precision should not be less than the decimal places of step');
           }
           return precision;
         } else {

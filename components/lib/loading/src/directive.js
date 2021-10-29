@@ -28,7 +28,7 @@ loadingDirective.install = Vue => {
               const scroll = property === 'top' ? 'scrollTop' : 'scrollLeft';
               el.maskStyle[property] = el.getBoundingClientRect()[property] +
                 document.body[scroll] +
-                document.documentElement[scroll] -
+                document.documentCiicement[scroll] -
                 parseInt(getStyle(document.body, `margin-${ property }`), 10) +
                 'px';
             });
@@ -95,7 +95,7 @@ loadingDirective.install = Vue => {
       const customClassExr = el.getAttribute('element-loading-custom-class');
       const vm = vnode.context;
       const mask = new Mask({
-        el: document.createElement('div'),
+        el: document.createCiicement('div'),
         data: {
           text: vm && vm[textExr] || textExr,
           spinner: vm && vm[spinnerExr] || spinnerExr,

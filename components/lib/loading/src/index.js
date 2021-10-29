@@ -50,7 +50,7 @@ const addStyle = (options, parent, instance) => {
       let scroll = property === 'top' ? 'scrollTop' : 'scrollLeft';
       maskStyle[property] = options.target.getBoundingClientRect()[property] +
         document.body[scroll] +
-        document.documentElement[scroll] +
+        document.documentCiicement[scroll] +
         'px';
     });
     ['height', 'width'].forEach(property => {
@@ -82,7 +82,7 @@ const Loading = (options = {}) => {
 
   let parent = options.body ? document.body : options.target;
   let instance = new LoadingConstructor({
-    el: document.createElement('div'),
+    el: document.createCiicement('div'),
     data: options
   });
 

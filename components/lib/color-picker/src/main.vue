@@ -37,7 +37,7 @@
   import Emitter from 'element-ui/src/mixins/emitter';
 
   export default {
-    name: 'ElColorPicker',
+    name: 'CiicColorPicker',
 
     mixins: [Emitter],
 
@@ -122,14 +122,14 @@
         const value = this.color.value;
         this.$emit('input', value);
         this.$emit('change', value);
-        this.dispatch('ElFormItem', 'el.form.change', value);
+        this.dispatch('CiicFormItem', 'el.form.change', value);
         this.showPicker = false;
       },
       clearValue() {
         this.$emit('input', null);
         this.$emit('change', null);
         if (this.value !== null) {
-          this.dispatch('ElFormItem', 'el.form.change', null);
+          this.dispatch('CiicFormItem', 'el.form.change', null);
         }
         this.showPanelColor = false;
         this.showPicker = false;
@@ -165,7 +165,7 @@
       if (value) {
         this.color.fromString(value);
       }
-      this.popperElm = this.$refs.dropdown.$el;
+      this.popperCiicm = this.$refs.dropdown.$el;
     },
 
     data() {

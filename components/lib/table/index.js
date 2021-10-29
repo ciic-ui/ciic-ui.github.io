@@ -1,8 +1,8 @@
-import ElTable from './src/table';
+import CiicTable from './src/table';
 
 /* istanbul ignore next */
-ElTable.install = function(Vue) {
-  Vue.component(ElTable.name, ElTable);
+CiicTable.install = function(Vue) {
+  Vue.component(CiicTable.name, CiicTable);
 };
 
-export default ElTable;
+export default CiicTable;

@@ -81,8 +81,8 @@
 <script type="text/babel">
   import Popup from 'element-ui/src/utils/popup';
   import Locale from 'element-ui/src/mixins/locale';
-  import ElInput from 'element-ui/packages/input';
-  import ElButton from 'element-ui/packages/button';
+  import CiicInput from 'element-ui/packages/input';
+  import CiicButton from 'element-ui/packages/button';
   import { addClass, removeClass } from 'element-ui/src/utils/dom';
   import { t } from 'element-ui/src/locale';
   import Dialog from 'element-ui/src/utils/aria-dialog';
@@ -129,8 +129,8 @@
     },
 
     components: {
-      ElInput,
-      ElButton
+      CiicInput,
+      CiicButton
     },
 
     computed: {
@@ -203,7 +203,7 @@
           const inputPattern = this.inputPattern;
           if (inputPattern && !inputPattern.test(this.inputValue || '')) {
             this.editorErrorMessage = this.inputErrorMessage || t('el.messagebox.error');
-            addClass(this.getInputElement(), 'invalid');
+            addClass(this.getInputCiicement(), 'invalid');
             return false;
           }
           const inputValidator = this.inputValidator;
@@ -211,18 +211,18 @@
             const validateResult = inputValidator(this.inputValue);
             if (validateResult === false) {
               this.editorErrorMessage = this.inputErrorMessage || t('el.messagebox.error');
-              addClass(this.getInputElement(), 'invalid');
+              addClass(this.getInputCiicement(), 'invalid');
               return false;
             }
             if (typeof validateResult === 'string') {
               this.editorErrorMessage = validateResult;
-              addClass(this.getInputElement(), 'invalid');
+              addClass(this.getInputCiicement(), 'invalid');
               return false;
             }
           }
         }
         this.editorErrorMessage = '';
-        removeClass(this.getInputElement(), 'invalid');
+        removeClass(this.getInputCiicement(), 'invalid');
         return true;
       },
       getFirstFocus() {
@@ -230,7 +230,7 @@
         const title = this.$el.querySelector('.el-message-box__btns .el-message-box__title');
         return btn || title;
       },
-      getInputElement() {
+      getInputCiicement() {
         const inputRefs = this.$refs.input.$refs;
         return inputRefs.input || inputRefs.textarea;
       },
@@ -259,7 +259,7 @@
               this.$refs.confirm.$el.focus();
             });
           }
-          this.focusAfterClosed = document.activeElement;
+          this.focusAfterClosed = document.activeCiicement;
           messageBox = new Dialog(this.$el, this.focusAfterClosed, this.getFirstFocus());
         }
 
@@ -268,12 +268,12 @@
         if (val) {
           setTimeout(() => {
             if (this.$refs.input && this.$refs.input.$el) {
-              this.getInputElement().focus();
+              this.getInputCiicement().focus();
             }
           }, 500);
         } else {
           this.editorErrorMessage = '';
-          removeClass(this.getInputElement(), 'invalid');
+          removeClass(this.getInputCiicement(), 'invalid');
         }
       }
     },

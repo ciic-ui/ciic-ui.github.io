@@ -11,9 +11,9 @@
   import Popper from 'element-ui/src/utils/vue-popper';
 
   export default {
-    name: 'ElSelectDropdown',
+    name: 'CiicSelectDropdown',
 
-    componentName: 'ElSelectDropdown',
+    componentName: 'CiicSelectDropdown',
 
     mixins: [Popper],
 
@@ -63,8 +63,8 @@
     },
 
     mounted() {
-      this.referenceElm = this.$parent.$refs.reference.$el;
-      this.$parent.popperElm = this.popperElm = this.$el;
+      this.referenceCiicm = this.$parent.$refs.reference.$el;
+      this.$parent.popperCiicm = this.popperCiicm = this.$el;
       this.$on('updatePopper', () => {
         if (this.$parent.visible) this.updatePopper();
       });

@@ -1,20 +1,20 @@
 import { arrayFindIndex } from 'element-ui/src/utils/util';
 import { getCell, getColumnByCell, getRowIdentity } from './util';
 import { getStyle, hasClass, removeClass, addClass } from 'element-ui/src/utils/dom';
-import ElCheckbox from 'element-ui/packages/checkbox';
-import ElTooltip from 'element-ui/packages/tooltip';
+import CiicCheckbox from 'element-ui/packages/checkbox';
+import CiicTooltip from 'element-ui/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store/helper';
 
 export default {
-  name: 'ElTableBody',
+  name: 'CiicTableBody',
 
   mixins: [LayoutObserver],
 
   components: {
-    ElCheckbox,
-    ElTooltip
+    CiicCheckbox,
+    CiicTooltip
   },
 
   props: {
@@ -78,7 +78,7 @@ export default {
 
   watch: {
     // don't trigger getter of currentRow in getCellClass. see https://jsfiddle.net/oe2b4hqt/
-    // update DOM manually. see https://github.com/ElemeFE/element/pull/13954/files#diff-9b450c00d0a9dec0ffad5a3176972e40
+    // update DOM manually. see https://github.com/CiicemeFE/element/pull/13954/files#diff-9b450c00d0a9dec0ffad5a3176972e40
     'store.states.hoverRow'(newVal, oldVal) {
       if (!this.store.states.isComplex || this.$isServer) return;
       let raf = window.requestAnimationFrame;
@@ -259,7 +259,7 @@ export default {
         const tooltip = this.$refs.tooltip;
         // TODO 会引起整个 Table 的重新渲染，需要优化
         this.tooltipContent = cell.innerText || cell.textContent;
-        tooltip.referenceElm = cell;
+        tooltip.referenceCiicm = cell;
         tooltip.$refs.popper && (tooltip.$refs.popper.style.display = 'none');
         tooltip.doDestroy();
         tooltip.setExpectedState(true);
@@ -324,7 +324,7 @@ export default {
         display = treeRowData.display;
       }
       // 指令 v-show 会覆盖 row-style 中 display
-      // 使用 :style 代替 v-show https://github.com/ElemeFE/element/issues/16995
+      // 使用 :style 代替 v-show https://github.com/CiicemeFE/element/issues/16995
       let displayStyle = display ? null : {
         display: 'none'
       };
@@ -379,7 +379,7 @@ export default {
                 {
                   column.renderCell.call(
                     this._renderProxy,
-                    this.$createElement,
+                    this.$createCiicement,
                     data,
                     columnsHidden[cellIndex]
                   )
@@ -399,7 +399,7 @@ export default {
         const renderExpanded = this.table.renderExpanded;
         const tr = this.rowRender(row, $index);
         if (!renderExpanded) {
-          console.error('[Element Error]renderExpanded is required.');
+          console.error('[Ciicement Error]renderExpanded is required.');
           return tr;
         }
         // 使用二维数组，避免修改 $index
@@ -407,7 +407,7 @@ export default {
           tr,
           <tr key={'expanded-row__' + tr.key}>
             <td colspan={ this.columnsCount } class="el-table__cell el-table__expanded-cell">
-              { renderExpanded(this.$createElement, { row, $index, store: this.store }) }
+              { renderExpanded(this.$createCiicement, { row, $index, store: this.store }) }
             </td>
           </tr>]];
       } else if (Object.keys(treeData).length) {

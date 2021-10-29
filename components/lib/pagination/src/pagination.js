@@ -1,12 +1,12 @@
 import Pager from './pager.vue';
-import ElSelect from 'element-ui/packages/select';
-import ElOption from 'element-ui/packages/option';
-import ElInput from 'element-ui/packages/input';
+import CiicSelect from 'element-ui/packages/select';
+import CiicOption from 'element-ui/packages/option';
+import CiicInput from 'element-ui/packages/input';
 import Locale from 'element-ui/src/mixins/locale';
 import { valueEquals } from 'element-ui/src/utils/util';
 
 export default {
-  name: 'ElPagination',
+  name: 'CiicPagination',
 
   props: {
     pageSize: {
@@ -191,8 +191,8 @@ export default {
       },
 
       components: {
-        ElSelect,
-        ElOption
+        CiicSelect,
+        CiicOption
       },
 
       methods: {
@@ -210,7 +210,7 @@ export default {
     Jumper: {
       mixins: [Locale],
 
-      components: { ElInput },
+      components: { CiicInput },
 
       data() {
         return {
@@ -227,7 +227,7 @@ export default {
       methods: {
         handleKeyup({ keyCode, target }) {
           // Chrome, Safari, Firefox triggers change event on Enter
-          // Hack for IE: https://github.com/ElemeFE/element/issues/11710
+          // Hack for IE: https://github.com/CiicemeFE/element/issues/11710
           // Drop this method when we no longer supports IE
           if (keyCode === 13) {
             this.handleChange(target.value);

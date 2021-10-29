@@ -64,10 +64,10 @@ class TableLayout {
 
     if (typeof value === 'number') {
       el.style[prop] = value + 'px';
-      this.updateElsHeight();
+      this.updateCiicsHeight();
     } else if (typeof value === 'string') {
       el.style[prop] = value;
-      this.updateElsHeight();
+      this.updateCiicsHeight();
     }
   }
 
@@ -89,20 +89,20 @@ class TableLayout {
     return flattenColumns;
   }
 
-  updateElsHeight() {
-    if (!this.table.$ready) return Vue.nextTick(() => this.updateElsHeight());
+  updateCiicsHeight() {
+    if (!this.table.$ready) return Vue.nextTick(() => this.updateCiicsHeight());
     const { headerWrapper, appendWrapper, footerWrapper } = this.table.$refs;
     this.appendHeight = appendWrapper ? appendWrapper.offsetHeight : 0;
 
     if (this.showHeader && !headerWrapper) return;
 
-    // fix issue (https://github.com/ElemeFE/element/pull/16956)
-    const headerTrElm = headerWrapper ? headerWrapper.querySelector('.el-table__header tr') : null;
-    const noneHeader = this.headerDisplayNone(headerTrElm);
+    // fix issue (https://github.com/CiicemeFE/element/pull/16956)
+    const headerTrCiicm = headerWrapper ? headerWrapper.querySelector('.el-table__header tr') : null;
+    const noneHeader = this.headerDisplayNone(headerTrCiicm);
 
     const headerHeight = this.headerHeight = !this.showHeader ? 0 : headerWrapper.offsetHeight;
     if (this.showHeader && !noneHeader && headerWrapper.offsetWidth > 0 && (this.table.columns || []).length > 0 && headerHeight < 2) {
-      return Vue.nextTick(() => this.updateElsHeight());
+      return Vue.nextTick(() => this.updateCiicsHeight());
     }
     const tableHeight = this.tableHeight = this.table.$el.clientHeight;
     const footerHeight = this.footerHeight = footerWrapper ? footerWrapper.offsetHeight : 0;
@@ -125,7 +125,7 @@ class TableLayout {
       if (getComputedStyle(headerChild).display === 'none') {
         return true;
       }
-      headerChild = headerChild.parentElement;
+      headerChild = headerChild.parentCiicement;
     }
     return false;
   }
