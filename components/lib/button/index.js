@@ -1,8 +1,8 @@
-import CiicButton from './src/button';
+import ElButton from './src/button.vue';
 
 /* istanbul ignore next */
-CiicButton.install = function(Vue) {
-  Vue.component(CiicButton.name, CiicButton);
+ElButton.install = function(Vue) {
+  Vue.component(ElButton.name, ElButton);
 };
 
-export default CiicButton;
+export default ElButton;

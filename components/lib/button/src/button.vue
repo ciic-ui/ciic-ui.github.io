@@ -24,7 +24,7 @@
 </template>
 <script>
   export default {
-    name: 'CiicButton',
+    name: 'ElButton',
 
     inject: {
       elForm: {

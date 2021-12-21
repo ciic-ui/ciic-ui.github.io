@@ -5,6 +5,6 @@
 </template>
 <script>
   export default {
-    name: 'CiicButtonGroup'
+    name: 'ElButtonGroup'
   };
 </script>
