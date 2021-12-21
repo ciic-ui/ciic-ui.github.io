@@ -2,38 +2,38 @@
 
 import Button from './button/index.js';
 import CiicIcon from './ciic-icon/index.js';
-// import locale from '../src/locale';
-// import CollapseTransition from '../src/transitions/collapse-transition';
+//import locale from '../src/locale';
+//import CollapseTransition from '../src/transitions/collapse-transition';
 
 const components = [
   Button,
   CiicIcon,
-  // CollapseTransition
+ // CollapseTransition
 ];
 
 const install = function(Vue, opts = {}) {
-  locale.use(opts.locale);
-  locale.i18n(opts.i18n);
+  //locale.use(opts.locale);
+  //locale.i18n(opts.i18n);
 
   components.forEach(component => {
     Vue.component(component.name, component);
   });
 
-  Vue.use(InfiniteScroll);
-  Vue.use(Loading.directive);
+  //Vue.use(InfiniteScroll);
+  //Vue.use(Loading.directive);
 
-  Vue.prototype.$ELEMENT = {
-    size: opts.size || '',
-    zIndex: opts.zIndex || 2000
-  };
+  //Vue.prototype.$ELEMENT = {
+   // size: opts.size || '',
+   // zIndex: opts.zIndex || 2000
+  //};
 
-  Vue.prototype.$loading = Loading.service;
-  Vue.prototype.$msgbox = MessageBox;
-  Vue.prototype.$alert = MessageBox.alert;
-  Vue.prototype.$confirm = MessageBox.confirm;
-  Vue.prototype.$prompt = MessageBox.prompt;
-  Vue.prototype.$notify = Notification;
-  Vue.prototype.$message = Message;
+  //Vue.prototype.$loading = Loading.service;
+  //Vue.prototype.$msgbox = MessageBox;
+  //Vue.prototype.$alert = MessageBox.alert;
+  //Vue.prototype.$confirm = MessageBox.confirm;
+  //Vue.prototype.$prompt = MessageBox.prompt;
+  //Vue.prototype.$notify = Notification;
+  //Vue.prototype.$message = Message;
 
 };
 
@@ -43,12 +43,12 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.1.2',
-  // locale: locale.use,
-  // i18n: locale.i18n,
+  version: '0.1.8',
+  //locale: locale.use,
+  //i18n: locale.i18n,
   install,
-  CollapseTransition,
-  Loading,
+  //CollapseTransition,
+  //Loading,
   Button,
   CiicIcon
 };
