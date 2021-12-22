@@ -1,1 +1,1 @@
-{"button":"./components/lib/button/index.js","ciic-icon":"./components/lib/ciic-icon/index.js"}
+{"button":"./components/lib/button/index.js","ciic-icon":"./components/lib/ciic-icon/index.js","popconfirm":"./components/lib/popconfirm/index.js","progress":"./components/lib/progress/index.js","upload":"./components/lib/upload/index.js"}

@@ -7,3 +7,37 @@ gulp.task('sass',async function(){
     .pipe(minifyCss())
     .pipe(gulp.dest('dist/css'));
 })
+
+const devPath = '/Users/mac/test'
+
+gulp.task('devCopyfiles', function () {
+    const sourceFiles = [
+      'deployment/**/*'
+    ];
+    const destination = devPath + '/node_modules/ciic-ui/';
+    return gulp.src(sourceFiles, {
+      base: "./deployment"
+    }).pipe(gulp.dest(destination));
+  });
+
+  gulp.task('copyfiles', function () {
+    const sourceFiles = [
+      'package.json',
+      'README.md',
+      'CHANGELOG.md',
+      'dist/**/*',
+      'components/**/*',
+      'node_modules/**/*'
+    ];
+    const destination = './deployment/';
+    return gulp.src(sourceFiles, {
+      base: "."
+    }).pipe(gulp.dest(destination));
+  });
+
+  gulp.task('dev', gulp.series([
+    'copyfiles'
+  ]));
+  gulp.task('pub', gulp.series([
+    'devCopyfiles'
+  ]));

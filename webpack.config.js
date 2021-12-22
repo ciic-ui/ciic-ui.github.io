@@ -1,4 +1,5 @@
 const { VueLoaderPlugin } = require('vue-loader')
+
 const glob = require('glob');
 const path = require('path')
 const chalk = require('chalk');
@@ -59,7 +60,7 @@ module.exports = {
         libraryTarget: 'umd'
     },
     plugins: [
-        new VueLoaderPlugin(),
+        new VueLoaderPlugin()
     ],
     module: {
         rules: [
@@ -72,5 +73,10 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    resolve: {
+        alias: {
+          '@ciic-ui': path.join(__dirname, './components'),
+        },
+      },
 }
