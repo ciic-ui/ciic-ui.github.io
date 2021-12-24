@@ -71,5 +71,18 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/ciic-ui/ciic-ui.github.io.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ciic-ui/ciic-ui.github.io/issues"
+  },
+  "homepage": "https://github.com/ciic-ui/ciic-ui.github.io#readme"
 }
