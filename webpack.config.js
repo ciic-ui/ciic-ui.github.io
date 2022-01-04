@@ -76,7 +76,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-          '@ciic-ui': path.join(__dirname, './components'),
+            '@ciic-ui': path.join(__dirname, './components'),
         },
-      },
+    },
 }

@@ -18,7 +18,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:js": "webpack --config ./webpack.config.js",
-    "build:css": "npx gulp sass",
+    "build:css": "npx gulp sass && npx gulp font",
     "build:ciic": "node ciic-build/write-json.js && node ciic-build/build-entry.js",
     "test": "npm run build:js && npm run build:css",
     "docs:dev": "vuepress dev docs",
@@ -67,11 +67,6 @@
     },
     "rules": {}
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
   "directories": {
     "doc": "docs",
     "example": "examples"
